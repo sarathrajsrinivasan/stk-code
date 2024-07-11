@@ -100,7 +100,7 @@ jobs:
   packaging:
     name: Packaging STK
     needs: build
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
       - name: Configure packaging name for git master branch
         if: ${{ github.ref == 'refs/heads/master' }}
