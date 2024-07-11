@@ -155,11 +155,16 @@ jobs:
           chmod 755 ./macosx-arm64/supertuxkart.app/Contents/MacOS/supertuxkart
           echo "3"
           dylibbundler -od -b -x ./macosx-arm64/supertuxkart.app/Contents/MacOS/supertuxkart -d ./macosx-arm64/supertuxkart.app/Contents/libs/ -p @executable_path/../libs/ -s ./dependencies-macosx/lib -ns
+          echo "4"
           # We use SDL_Vulkan_LoadLibrary for 10.9 compatibility, so otool -L supertuxkart has no libMoltenVK.dylib
           cp ./dependencies-macosx/lib/libMoltenVK.dylib ./macosx-arm64/supertuxkart.app/Contents/libs/
+          echo "5"
           cd ./macosx-arm64/supertuxkart.app/Contents/Resources/data
+          echo "6"
           wget https://github.com/supertuxkart/stk-assets-mobile/releases/download/git/stk-assets-full.zip
+          echo "7"
           unzip stk-assets-full.zip
+          echo "8"
           rm stk-assets-full.zip
           cd ../../../../..
           mv ./macosx-arm64/supertuxkart.app SuperTuxKart.app
