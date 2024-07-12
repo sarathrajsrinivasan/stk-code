@@ -102,6 +102,10 @@ jobs:
     needs: build
     runs-on: macos-latest
     steps:
+      - name: Update gcc
+        run : |
+          brew list --versions gcc
+          brew install gcc@12.3.0
       - name: Configure packaging name for git master branch
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
